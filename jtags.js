@@ -50,8 +50,8 @@
 						});
 	
 				r = $(this.e).val().split( this.sep );
-				this.tags = []
-				for(i in r){				
+				this.tags = [];
+				for(var i = 0, len = r.length; i < len; i++){
 					r[i] = r[i].replace( new RegExp('["' + this.sep + ' ]', 'gi'), '');
 					if(r[i] != ''){	
 						this.tags.push(r[i]);	
@@ -73,7 +73,7 @@
 			},		
 			remove_tag:function(tag_txt){
 				r = [];
-				for(i in this.tags){
+				for(var i = 0, len = this.tags.length; i < len; i++){
 					if(this.tags[i] != tag_txt){	
 						r.push(this.tags[i]);	
 					}
@@ -89,7 +89,7 @@
 				$(this.e).val(this.tags.join(this.sep + ' '));
 				
 				h = '';
-				for(i in that.tags){
+				for(var i = 0, len = this.tags.length; i < len; i++){
 					h += '<div class="jq_tags_token">' + that.tags[i] + '<a href="#">x</a></div>';
 				}
 				$(that.ed).find('input').val('');
