@@ -1,5 +1,12 @@
 (function($){
 	$.fn.tags = function(options){
+		if(this.length > 1){
+			this.each(function(){
+				$(this).tags(options);
+			});
+			return this;
+		}
+
 		var origin_element = this;
 		
 		options = options || {};
