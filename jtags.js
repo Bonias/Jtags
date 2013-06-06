@@ -31,7 +31,7 @@
 					this.ed = n.get(0);
 				}			
 				else{
-					$(this.e).after('<div class="jq_tags_editor"><div class="jq_tags_tokens"></div><input type="text" class="jq_tags_editor_input" placeholder="' +  $(this.e).attr('placeholder') + '"/></div>');
+					$(this.e).after('<div class="jq_tags_editor"><div class="jq_tags_tokens"></div><input type="text" class="jq_tags_editor_input" placeholder="' +  ($(this.e).attr('placeholder') || "") + '"/></div>');
 					this.ed = $(this.e).next();
 				}
 	
